@@ -238,7 +238,7 @@ public class PantallaObje extends javax.swing.JFrame {
         jMenuItem2.setText("Cola");
         jMenu1.add(jMenuItem2);
 
-        jMenuItem3.setText("Siguiente Pantalla");
+        jMenuItem3.setText("Panel de Carga");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);

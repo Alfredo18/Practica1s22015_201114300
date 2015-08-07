@@ -23,9 +23,10 @@ public class Diseño extends javax.swing.JFrame {
      */
     public Diseño() {
         initComponents();
+         this.setTitle("PANEL DE CARGA");
         this.setLocationRelativeTo(null);
         JScrollPane barra = new JScrollPane();
-        barra.setBounds(50, 11, 396, 100);
+        barra.setBounds(50, 11, 581, 100);
         barra.setViewportView(this.CargarImg);
         barra.getViewport().setView(this.CargarImg);
         getContentPane().add(barra);
@@ -58,7 +59,7 @@ public class Diseño extends javax.swing.JFrame {
         CargarImg.setLayout(CargarImgLayout);
         CargarImgLayout.setHorizontalGroup(
             CargarImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 396, Short.MAX_VALUE)
+            .addGap(0, 581, Short.MAX_VALUE)
         );
         CargarImgLayout.setVerticalGroup(
             CargarImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,7 +110,7 @@ public class Diseño extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CargarImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -75,7 +75,7 @@ public class ListaDoble {
     public void CargarListas(JPanel CargarImg){
      int contador =0;
      Nodo ayuda = IN;
-     int aumentador = 50;
+     int aumentador = 70;
      while(ayuda!=null){
          if(ayuda.per.Tipo==("mario")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\mario.png");
@@ -88,7 +88,7 @@ public class ListaDoble {
          } else if(ayuda.per.Tipo==("hongo")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\hongo.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 20, 26);
+         ayuda.setBounds(25+contador*aumentador, 18, 20, 26);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
@@ -96,7 +96,7 @@ public class ListaDoble {
          } else if(ayuda.per.Tipo==("Pared")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\Pared.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 26, 38);
+         ayuda.setBounds(25+contador*aumentador, 18, 24, 26);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
@@ -104,7 +104,7 @@ public class ListaDoble {
          }else if(ayuda.per.Tipo==("tortuga")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\Kopa.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 26, 38);
+         ayuda.setBounds(25+contador*aumentador, 18, 24, 27);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
@@ -112,7 +112,7 @@ public class ListaDoble {
          }else if(ayuda.per.Tipo==("Ficha")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\ficha.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 26, 38);
+         ayuda.setBounds(25+contador*aumentador, 18, 15, 27);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
@@ -120,7 +120,7 @@ public class ListaDoble {
          }else if(ayuda.per.Tipo==("Castillo")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\castillo.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 26, 38);
+         ayuda.setBounds(25+(contador*aumentador)+4, 14, 60, 59);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
@@ -128,7 +128,7 @@ public class ListaDoble {
          }else if(ayuda.per.Tipo==("HongoMalo")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\Gomba.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 26, 38);
+         ayuda.setBounds(25+contador*aumentador, 18, 23, 25);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
@@ -136,7 +136,7 @@ public class ListaDoble {
          }else if(ayuda.per.Tipo==("Suelo")){
          ImageIcon img = new ImageIcon("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\Suelo.png");
          ayuda.setIcon(img);
-         ayuda.setBounds(25+contador*aumentador, 10, 26, 38);
+         ayuda.setBounds(25+(contador*aumentador)+4, 14, 57, 51);
          CargarImg.add(ayuda);
          CargarImg.repaint();
          contador ++;
