@@ -20,13 +20,13 @@ public class tablero extends JPanel{
         this.setBackground(Color.black);
        
     }
-    Marito m = new Marito(30,40);
+    Marito m = new Marito(50,50);
     public void paintComponent(Graphics d){
         super.paintComponent(d);
         d.setColor(Color.red);
         int ancho = getWidth();
         int alto = getHeight();
-        m.loadImage("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\mariopractica\\ash.png");
+        m.loadImage("C:\\Users\\G42368LA\\Documents\\NetBeansProjects\\Mariopractica\\src\\Imaganes\\mario.png");
         d.drawImage(m.getImage(), m.getX(), m.getY(), this);
                 
         

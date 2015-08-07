@@ -5,11 +5,13 @@
  */
 package mariopractica;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author G42368LA
  */
-public class Nodo {
+public class Nodo extends JLabel{
     Personajes per;
     Nodo nex;
     Nodo pre;
