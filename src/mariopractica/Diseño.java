@@ -57,7 +57,7 @@ public class Diseño extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        CargarImg.setBackground(new java.awt.Color(255, 51, 153));
+        CargarImg.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout CargarImgLayout = new javax.swing.GroupLayout(CargarImg);
         CargarImg.setLayout(CargarImgLayout);
@@ -70,7 +70,7 @@ public class Diseño extends javax.swing.JFrame {
             .addGap(0, 67, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
