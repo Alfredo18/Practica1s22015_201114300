@@ -404,8 +404,9 @@ public class PantallaObje extends javax.swing.JFrame {
     public void Meter(JTextField Nombres){
           JLabel Mario = new JLabel();
         Mario.setText(Nombres.getText());
-        Mario.setBounds(30, 30 + Contador * 40, 50, 15);
+        Mario.setBounds(15, 30 + Contador * 40, 100, 15);
         this.jPanel1.add(Mario);
+        
        
         
        JButton mar = new JButton();
@@ -415,7 +416,7 @@ public class PantallaObje extends javax.swing.JFrame {
        
         JButton mare = new JButton();
        mare.setText("Eliminar");
-       mare.setBounds(180, 23 + Contador * 40, 90, 30);
+       mare.setBounds(180, 23 + Contador * 40, 80, 30);
        this.jPanel1.add(mare);
        
       this.jPanel1.repaint();
