@@ -8,6 +8,7 @@ package mariopractica;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -61,6 +62,18 @@ public class ListaDoble {
         return per;
     }
     
+    public void EliminarMedio(Nodo eliminado){
+        Nodo ayuda1;
+        Nodo ayuda2;
+        
+        ayuda1=eliminado.pre;
+        ayuda2=eliminado.nex;
+        
+        ayuda1.nex=ayuda2;
+        ayuda2.pre=ayuda1;
+ 
+    }
+    
     public Personajes EliminarPersonajeEND(){
         Personajes per =END.per;
         if(IN==END){
@@ -70,6 +83,18 @@ public class ListaDoble {
             END.nex=null;
        }
         return per;
+    }
+    
+    public int longitudlista(int recorrer){
+        recorrer = 0;
+        if(!listavacia()){     
+        }
+        Nodo aux = IN;
+        while(aux!=null){
+        recorrer +=1;
+        aux=aux.nex;
+        }
+    return recorrer;
     }
     
     public void CargarListas(JPanel CargarImg){
@@ -157,6 +182,19 @@ public class ListaDoble {
         }
         JOptionPane.showMessageDialog(null,datos,"Mostrando Lista",JOptionPane.INFORMATION_MESSAGE);
     }   }
+    
+      public void mostrarlistaPanel(JTextArea pantalla){
+    if(!listavacia()){
+        String datos = "<=>";
+        Nodo aux = IN;
+        while(aux!=null){
+       // datos= datos + "["+aux.per.Nombre+"]<=>";
+        pantalla.append(datos + "["+aux.per.Nombre+"]<=>");
+            aux=aux.nex;
+        }
+        
+    }   }
+    
     
        public String Grafis(){
           String inicio = "";

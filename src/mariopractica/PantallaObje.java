@@ -5,7 +5,11 @@
  */
 package mariopractica;
 
+
+
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,6 +26,7 @@ public class PantallaObje extends javax.swing.JFrame {
  // validar mario y castillo
         boolean solounmario = true;
         boolean solouncastillo = true;
+        static boolean comparacion= true;
     /**
      * Creates new form PantallaObje
      */
@@ -103,6 +108,7 @@ public class PantallaObje extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -225,9 +231,19 @@ public class PantallaObje extends javax.swing.JFrame {
         jMenu1.setText("OPCIONES");
 
         jMenuItem1.setText("Pila");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Cola");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Panel de Carga");
@@ -237,6 +253,14 @@ public class PantallaObje extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Graficar en Consola");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem4);
 
         jMenuBar1.add(jMenu1);
 
@@ -249,7 +273,7 @@ public class PantallaObje extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
+                        .addGap(177, 177, 177)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -261,7 +285,7 @@ public class PantallaObje extends javax.swing.JFrame {
                                             .addComponent(HongoMalo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Castillo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING))))
@@ -377,89 +401,143 @@ public class PantallaObje extends javax.swing.JFrame {
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(Suelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton9))
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(1, 1, 1)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Suelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButton9))
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(1, 1, 1))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // boton de mario
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
    
        if(solounmario==true){
-            Meter(mario);
-       }else{ }
-      lis.InsertarPersonajeIN(new Personajes(mario.getText(),"mario"));
+            
+             lis.InsertarPersonajeIN(new Personajes(mario.getText(),"mario"));
+             Meter(mario);
+            
+       }else{ 
+       
+       }
+     
        solounmario=false;
        
     }//GEN-LAST:event_jButton1ActionPerformed
         
     public void Meter(JTextField Nombres){
+        Nodo ayuda = lis.IN;
+        
           JLabel Mario = new JLabel();
         Mario.setText(Nombres.getText());
         Mario.setBounds(15, 30 + Contador * 40, 100, 15);
         this.jPanel1.add(Mario);
         
        
-        
+        // boton para modificar el Nombre
        JButton mar = new JButton();
        mar.setText("Modificar");
        mar.setBounds(80, 23 + Contador * 40, 90, 30);
+       
+        //metodo para la modificacion en la lista y en el panel
+       mar.addActionListener(new ActionListener() {
+         
+              @Override
+              public void actionPerformed(ActionEvent e) {
+               String cambio=JOptionPane.showInputDialog(null,"Ingrese Nuevo Nombre","");
+               Mario.setText(cambio);
+               ayuda.per.Nombre=cambio;
+              }
+          });
        this.jPanel1.add(mar);
        
+       // boton eliminar
+       
         JButton mare = new JButton();
-       mare.setText("Eliminar");
+       
+      mare.setText("Eliminar");
        mare.setBounds(180, 23 + Contador * 40, 80, 30);
-       this.jPanel1.add(mare);
+        this.jPanel1.add(mare);
+        mare.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(null, "Eliminado");
+                 
+                 if(ayuda==lis.IN){
+                  lis.EliminarPersonajeIN();
+                 
+                 } else if(ayuda==lis.END){
+                 
+                 lis.EliminarPersonajeEND();
+                 
+                 } else{
+                 
+                 lis.EliminarMedio(ayuda);
+                 
+                 }
+                 
+                 
+            }
+        });
+        
        
       this.jPanel1.repaint();
       
       Contador++;
-     
+        
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Meter(hongo);
+       
          lis.InsertarPersonajeIN(new Personajes(hongo.getText(),"hongo"));
+          Meter(hongo);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Meter(Pared);
+       
          lis.InsertarPersonajeIN(new Personajes(Pared.getText(),"Pared"));
+          Meter(Pared);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       Meter(tortuga);
+     
         lis.InsertarPersonajeIN(new Personajes(tortuga.getText(),"tortuga"));
+          Meter(tortuga);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        Meter(Ficha);
+        
          lis.InsertarPersonajeIN(new Personajes(Ficha.getText(),"Ficha"));
+         Meter(Ficha);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
             if(solouncastillo==true){
+             
+             lis.InsertarPersonajeIN(new Personajes(Castillo.getText(),"Castillo"));
              Meter(Castillo);
              }else{ }
-      lis.InsertarPersonajeIN(new Personajes(Castillo.getText(),"Castillo"));
+     
        solouncastillo=false;
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        Meter(HongoMalo);
+        
          lis.InsertarPersonajeIN(new Personajes(HongoMalo.getText(),"HongoMalo"));
+         Meter(HongoMalo);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       Meter(Suelo);
+       
         lis.InsertarPersonajeIN(new Personajes(Suelo.getText(),"Suelo"));
+        Meter(Suelo);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void FichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichaActionPerformed
@@ -479,6 +557,20 @@ public class PantallaObje extends javax.swing.JFrame {
         D.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        //Pila
+       comparacion=true;
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       //Cola
+      comparacion = false;
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        lis.Grafis();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -543,6 +635,7 @@ public class PantallaObje extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField mario;
     private javax.swing.JTextField tortuga;
